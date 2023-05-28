@@ -29,7 +29,6 @@ function mapBaseObject(columns, rows, rowLength) {
         dataStoreObject.push(base_object_map);
         rows.splice(count, 1);
         let len = rows.length;
-        // console.log('creating object with length ==>', base_object_map, len);
         return mapBaseObject(columns, rows, len);
     }
 }
@@ -38,16 +37,11 @@ function mapArrToObject(columns, rows, row_length) {
     const INITIAL_LENGTH = 1000;
     const START_INDEX = 0;
     if (row_length > INITIAL_LENGTH) {
-        console.log('total length ==> ',row_length)
-        let rows_left_limit = Math.abs(row_length - INITIAL_LENGTH);
         let sub_row = rows.slice(START_INDEX, INITIAL_LENGTH);
         let sub_row_length = sub_row.length;
-        console.log('sub row length ==> ',sub_row_length)
-        console.log('left rows ==>',rows_left_limit)
         mapBaseObject(columns, sub_row, sub_row_length);
         let base_row = rows.slice(sub_row_length, rows.length);
         let base_row_length = base_row.length;
-        console.log('base row length ==>',base_row_length)
         return mapArrToObject(columns, base_row, base_row_length);
     } else {
         mapBaseObject(columns, rows, row_length);
@@ -65,10 +59,11 @@ function reader() {
         rows.splice(0, 1);
         let rowLength = rows.length;
         const finalData = mapArrToObject(columns, rows, rowLength);
-        console.log('final data object ==>',finalData);
+        return finalData;
     } catch (error) {
         console.log(error);
     }
 }
 
-reader();
+const result = reader();
+console.log(result);
