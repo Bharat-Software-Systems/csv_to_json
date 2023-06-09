@@ -64,6 +64,7 @@ function reader() {
         console.log(error);
     }
 }
-
+console.time('reader_function');
 const result = reader();
+console.timeEnd('reader_function');
 console.log(result);
