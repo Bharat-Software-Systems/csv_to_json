@@ -1,5 +1,5 @@
 {
-  "name": "csv_to_json",
+  "name": "@bharat_software_systems/csv_to_json",
   "version": "1.0.0",
   "description": "a CSV to JSON converter",
   "main": "index.js",
@@ -8,12 +8,20 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Bharat-Software-Systems/csv_to_json.git"
+    "url": "git+https://github.com/bharat-software-systems/csv_to_json.git"
   },
+  "keywords": [
+    "csv",
+    "json",
+    "file",
+    "converter",
+    "csv_to_json",
+    "csv-to-json"
+  ],
   "author": "Bharat-Software-Systems",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Bharat-Software-Systems/csv_to_json/issues"
+    "url": "https://github.com/bharat-software-systems/csv_to_json/issues"
   },
-  "homepage": "https://github.com/Bharat-Software-Systems/csv_to_json#readme"
+  "homepage": "https://github.com/bharat-software-systems/csv_to_json#readme"
 }
