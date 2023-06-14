@@ -49,22 +49,31 @@ function mapArrToObject(columns, rows, row_length) {
     return dataStoreObject;
 }
 
-function reader() {
+async function reader(file) {
     try {
-        const filePath = path.join(__dirname, 'sample_company_data.csv');
-        const data = fs.readFileSync(filePath, 'utf8');
+        // let data = '';
+        // const stream = fs.createReadStream(file, 'utf8');
+        // for await(const chunk of stream) {
+        //     data += chunk
+        // }
+        const data = fs.readFileSync(file, 'utf8');
         let columns = data.split('\n')[0];
         columns = columns.replace(/\r/g,'').split(',');
         let rows = data.split('\n');
         rows.splice(0, 1);
         let rowLength = rows.length;
         const finalData = mapArrToObject(columns, rows, rowLength);
-        return finalData;
+        console.log(process.memoryUsage())
+        return {
+            data: finalData,
+            error: null
+        }
     } catch (error) {
-        console.log(error);
+        return {
+            error,
+            data: null,
+        }
     }
 }
-console.time('reader_function');
-const result = reader();
-console.timeEnd('reader_function');
-console.log(result);
+
+module.exports = reader;
