@@ -1,6 +1,6 @@
-# Foobar
+# CSV_TO_JSON
 
-Foobar is a Python library for dealing with word pluralization.
+CSV_TO_JSON is a CSV to JSON converter.
 
 ## Installation
 
