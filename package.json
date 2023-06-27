@@ -1,6 +1,6 @@
 {
   "name": "@bharat_software_systems/csv_to_json",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "a CSV to JSON converter",
   "main": "index.js",
   "scripts": {
