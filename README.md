@@ -13,10 +13,10 @@ npm i @bharat_software_systems/csv_to_json
 ## Usage
 
 ```javascript
-var csvToJson = require("@bharat_software_systems/csv_to_json") // Requiring package
+var { csvToJson } = require("@bharat_software_systems/csv_to_json") // Requiring package
 
 app.post('/api/upload', upload.single('file'), async (req, res) => {
-    const data = await reader(req.file.path) // Passing file path.
+    const data = await csvToJson(req.file.path) // Passing file path.
     return res.json({ data });
 });
 ```
