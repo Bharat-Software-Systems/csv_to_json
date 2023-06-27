@@ -16,7 +16,7 @@ npm i @bharat_software_systems/csv_to_json
 const { reader } = require('csv_to_json'); // Requiring package
 
 app.post('/api/upload', upload.single('file'), async (req, res) => {
-    const data = await reader(req.file.path) // Passing multer file path.
+    const data = await reader(req.file.path) // Passing file path.
     return res.json({ data });
 });
 ```
